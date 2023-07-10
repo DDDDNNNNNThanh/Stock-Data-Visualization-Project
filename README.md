@@ -26,9 +26,9 @@ def make_graph(stock_data, revenue_data, stock):
     revenue_data_specific = revenue_data[revenue_data.Date <= '2021-04-30']
     """
     These lines add two traces to the figure (fig). The first trace represents the share price data, and the second
-    trace represents the revenue data. Each trace is created using the go.Scatter class from the plotly.graph_objects module. The x-values are 
-    converted to datetime format using pd.to_datetime, and the y-values are converted to float. The name parameter assigns a label to each trace. 
-    The traces are added to specific rows and columns in the subplot grid.
+    trace represents the revenue data. Each trace is created using the go.Scatter class from the plotly.graph_objects module.
+    The x-values are converted to datetime format using pd.to_datetime, and the y-values are converted to float. The name
+    parameter assigns a label to each trace. The traces are added to specific rows and columns in the subplot grid.
     """
     fig.add_trace(go.Scatter(x=pd.to_datetime(stock_data_specific.Date, infer_datetime_format=True), y=stock_data_specific.Close.astype("float"), name="Share Price"), row=1, col=1)
     fig.add_trace(go.Scatter(x=pd.to_datetime(revenue_data_specific.Date, infer_datetime_format=True), y=revenue_data_specific.Revenue.astype("float"), name="Revenue"), row=2, col=1)

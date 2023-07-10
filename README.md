@@ -100,7 +100,7 @@ This section utilizes the `make_graph` function to plot the historical share pri
 ```python
 make_graph(tesla_data, tesla_revenue, 'TSLA')
 ```
-<img width="500" alt="image" src="https://github.com/DDDDNNNNNThanh/Stock-Data-Visualization-Project/assets/110702728/e4738bd0-df46-45ca-9a5e-96a183769139">
+<img width="2000" alt="image" src="https://github.com/DDDDNNNNNThanh/Stock-Data-Visualization-Project/assets/110702728/e4738bd0-df46-45ca-9a5e-96a183769139">
 
 
 ## Plot GME Stock Graph
@@ -110,6 +110,6 @@ Similar to the previous section, this part uses the `make_graph` function to plo
 ```python
 make_graph(gme_data, gme_revenue, 'GME')
 ```
-<img width="500" alt="image" src="https://github.com/DDDDNNNNNThanh/Stock-Data-Visualization-Project/assets/110702728/fd233eaf-ac0e-41d4-8495-6a08484ec56a">
+<img width="2000" alt="image" src="https://github.com/DDDDNNNNNThanh/Stock-Data-Visualization-Project/assets/110702728/fd233eaf-ac0e-41d4-8495-6a08484ec56a">
 
 

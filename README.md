@@ -19,6 +19,7 @@ The `make_graph` function is responsible for creating a graph that displays the 
 
 ```python
 def make_graph(stock_data, revenue_data, stock):
+    # This line initializes a figure object (fig) using the make_subplots function from the plotly.subplots module. It creates a subplot grid with 2     rows and 1 column, sharing the x-axis, and assigns titles to each subplot.
     fig = make_subplots(rows=2, cols=1, shared_xaxes=True, subplot_titles=("Historical Share Price","Historical Revenue"))
     stock_data_specific = stock_data[stock_data.Date <= '2021--06-14']
     revenue_data_specific = revenue_data[revenue_data.Date <= '2021-04-30']
@@ -88,6 +89,8 @@ This section utilizes the `make_graph` function to plot the historical share pri
 ```python
 make_graph(tesla_data, tesla_revenue, 'TSLA')
 ```
+<img width="369" alt="image" src="https://github.com/DDDDNNNNNThanh/Stock-Data-Visualization-Project/assets/110702728/e4738bd0-df46-45ca-9a5e-96a183769139">
+
 
 ## Plot GME Stock Graph
 
@@ -96,5 +99,6 @@ Similar to the previous section, this part uses the `make_graph` function to plo
 ```python
 make_graph(gme_data, gme_revenue, 'GME')
 ```
+<img width="349" alt="image" src="https://github.com/DDDDNNNNNThanh/Stock-Data-Visualization-Project/assets/110702728/fd233eaf-ac0e-41d4-8495-6a08484ec56a">
 
 

@@ -19,13 +19,14 @@ The `make_graph` function is responsible for creating a graph that displays the 
 
 ```python
 def make_graph(stock_data, revenue_data, stock):
-    # This line initializes a figure object (fig) using the make_subplots function from the plotly.subplots module.
-    #It creates a subplot grid with 2     rows and 1 column, sharing the x-axis, and assigns titles to each subplot.
+    # This line initializes a figure object (fig) using the make_subplots function from the plotly.subplots module. It creates a subplot grid with 2     rows and 1 column, sharing the x-axis, and assigns titles to each subplot.
     fig = make_subplots(rows=2, cols=1, shared_xaxes=True, subplot_titles=("Historical Share Price","Historical Revenue"))
 
     stock_data_specific = stock_data[stock_data.Date <= '2021--06-14']
     revenue_data_specific = revenue_data[revenue_data.Date <= '2021-04-30']
-    # These lines add two traces to the figure (fig). The first trace represents the share price data, and the second trace represents the revenue       # data. Each trace is created using the go.Scatter class from the plotly.graph_objects module. The x-values are converted to datetime format         # using pd.to_datetime, and the y-values are converted to float. The name parameter assigns a label to each trace. The traces are added to           # specific rows and columns in the subplot grid.
+    """
+    These lines add two traces to the figure (fig). The first trace represents the share price data, and the second trace represents the revenue         data. Each trace is created using the go.Scatter class from the plotly.graph_objects module. The x-values are converted to datetime format            using pd.to_datetime, and the y-values are converted to float. The name parameter assigns a label to each trace. The traces are added to            specific rows and columns in the subplot grid.
+    """
     fig.add_trace(go.Scatter(x=pd.to_datetime(stock_data_specific.Date, infer_datetime_format=True), y=stock_data_specific.Close.astype("float"), name="Share Price"), row=1, col=1)
     fig.add_trace(go.Scatter(x=pd.to_datetime(revenue_data_specific.Date, infer_datetime_format=True), y=revenue_data_specific.Revenue.astype("float"), name="Revenue"), row=2, col=1)
     # These lines update the x-axis and y-axis titles for each subplot.
@@ -33,8 +34,9 @@ def make_graph(stock_data, revenue_data, stock):
     fig.update_xaxes(title_text='Date', row=2, col=1)
     fig.update_yaxes(title_text="Price ($US)", row=1, col=1)
     fig.update_yaxes(title_text="Revenue ($US Millions)", row=2, col=1)
-    # This line updates the layout of the figure. It hides the legend, sets the height of the figure to 900 pixels, assigns the stock parameter as
-    # the title, and enables a range slider for the x-axis.
+    """
+    This line updates the layout of the figure. It hides the legend, sets the height of the figure to 900 pixels, assigns the stock parameter as the     title, and enables a range slider for the x-axis.
+    """
     fig.update_layout(showlegend=False,
     height=900,
     title=stock,
